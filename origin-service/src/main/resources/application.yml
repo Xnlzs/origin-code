@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: origin-service
+
+dubbo:
+  registry:
+    address: nacos://mse-24a84710-p.nacos-ans.mse.aliyuncs.com:8848
+  scan:
+    base-packages: com.xnl.origincode.service.user.impl
+  protocols:
+    dubbo:
+      name: dubbo
+      port: 40901
+      threads: 30
+  provider:
+    timeout: 13000
+    version: 1.0.0
+    group: origin-service
+    filter: dubboExceptionFilter,-exception
+  consumer:
+    timeout: 13000
+    retries: 0
+    check: false
+    version: 1.0.0
+
+logging:
+  level:
+    root: warn

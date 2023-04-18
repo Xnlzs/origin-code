@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: origin-web
+
+dubbo:
+  registry:
+    address: nacos://mse-24a84710-p.nacos-ans.mse.aliyuncs.com:8848
+  consumer:
+    version: 1.0.0
+    timeout: 8000
+    retries: 0
+
+logging:
+  level:
+    root: warn
